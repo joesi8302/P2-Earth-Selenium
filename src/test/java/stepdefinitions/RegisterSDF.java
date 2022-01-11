@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,6 +12,11 @@ import java.sql.Driver;
 public class RegisterSDF {
 
     RegisterPOM registerPOM;
+
+    @After
+    public void tearDown(){
+        DriverSingleton.quitInstance();
+    }
 
     @Given("a user is on the register page")
     public void a_user_is_on_the_register_page() {

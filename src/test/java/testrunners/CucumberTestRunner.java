@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "features/register.feature",
         glue = "stepdefinitions",
-        dryRun = true
+        dryRun = false
 )
 public class CucumberTestRunner {
 
