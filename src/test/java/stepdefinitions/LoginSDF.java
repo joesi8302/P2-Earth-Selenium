@@ -1,23 +1,19 @@
 package stepdefinitions;
 
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import poms.LoginPOM;
 
 public class LoginSDF {
-
     LoginPOM loginPOM;
 
-    @After
-    public void tearDown(){
-        DriverSingleton.quitInstance();
-    }
+//    @After
+//    public void tearDown(){
+//        DriverSingleton.quitInstance();
+//    }
 
     @Given("A user is on the login page")
     public void a_user_is_on_the_login_page() throws InterruptedException {
@@ -39,8 +35,8 @@ public class LoginSDF {
 
     @When("A user inputs correct credentials on the login form")
     public void a_user_inputs_correct_credentials_on_the_login_form() {
-        this.loginPOM.enterUsername("lionelmorgan");
-        this.loginPOM.enterPassword("pass123");
+        this.loginPOM.enterUsername("joesi");
+        this.loginPOM.enterPassword("password");
         this.loginPOM.clickLogin();
     }
     @Then("the user will be redirect to the user's account page")
