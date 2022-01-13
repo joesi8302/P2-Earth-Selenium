@@ -14,7 +14,7 @@ public class ForgotPasswordSDF {
     public void a_user_is_on_the_login_page() throws InterruptedException {
         DriverSingleton.getInstance().get("http://localhost:4200");
         Thread.sleep(5000);
-        this.forgotPasswordPOM = new forgotPasswordPOM(DriverSingleton.getInstance());
+        this.forgotPasswordPOM = new ForgotPasswordPOM(DriverSingleton.getInstance());
         Assertions.assertEquals("http://localhost:4200/", this.forgotPasswordPOM.getCurrentUrl());
     }
     @When("A user clicks the forgot password link")
