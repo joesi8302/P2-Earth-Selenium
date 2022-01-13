@@ -25,9 +25,6 @@ public class LoginPOM {
     @FindBy(className = "register")
     WebElement registerBtn;
 
-    @FindBy(className = "forgot")
-    WebElement forgotPasswordLink;
-
     @FindBy(id = "message")
     WebElement messageElem;
 
