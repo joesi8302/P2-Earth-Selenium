@@ -11,3 +11,7 @@ Feature: Login Page
     Given A user is on the login page
     When A user clicks the register button
     Then user will be redirected to the register page
+  Scenario: Clicking the Forgot Password Link will take user to the forgot password page
+    Given A user is on the login page
+    When A user clicks the forgot password link
+    Then user will be redirected to the forgot password page

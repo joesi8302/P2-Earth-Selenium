@@ -1,5 +1,5 @@
 Feature: Login and Forgot Password Page
-  Scenario: Clicking the Forgot Password Link will take user to the forgot password page
+  Background: User is on login page
     Given A user is on the login page
     When A user clicks the forgot password link
     Then user will be redirected to the forgot password page

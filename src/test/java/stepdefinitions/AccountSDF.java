@@ -14,7 +14,7 @@ public class AccountSDF {
     String username = "joesi";
     String firstname = "joe";
     String lastname = "si";
-    String email = "email.net";
+    String email = "email1.net";
     String password = "password";
 
     @Given("a user is on the account page")

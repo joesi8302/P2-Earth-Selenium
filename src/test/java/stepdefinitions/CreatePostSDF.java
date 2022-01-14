@@ -13,11 +13,6 @@ public class CreatePostSDF {
 
     CreatePostPOM createPostPOM;
 
-    @After
-    public void tearDown() {
-        DriverSingleton.quitInstance();
-    }
-
     //may have to insert login info
     @Given("A user is on the account page")
     public void a_user_is_on_the_account_page() {

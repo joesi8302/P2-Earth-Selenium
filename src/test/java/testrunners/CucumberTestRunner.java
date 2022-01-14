@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "features/forgotpassword.feature",
+        features = "features",
         glue = "stepdefinitions",
         dryRun = false
 )

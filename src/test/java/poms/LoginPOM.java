@@ -25,7 +25,7 @@ public class LoginPOM {
     @FindBy(className = "register")
     WebElement registerBtn;
 
-    @FindBy(id = "message")
+    @FindBy(className = "err")
     WebElement messageElem;
 
     @FindBy(className = "forgot")
@@ -49,6 +49,7 @@ public class LoginPOM {
     public void clickLogin(){
         this.loginBtn.click();
     }
+
     public void clickForgotPassword(){
         this.forgotPasswordLink.click();
         this.wait.until(ExpectedConditions.urlToBe("http://localhost:4200/forget-password"));
@@ -70,6 +71,10 @@ public class LoginPOM {
     public void clickRegister(){
         this.registerBtn.click();
         this.wait.until(ExpectedConditions.urlToBe("http://localhost:4200/register"));
+    }
+
+    public void waitForSuccessfulRedirect(){
+        this.wait.until(ExpectedConditions.urlToBe("http://localhost:4200/forget-password"));
     }
 
 }

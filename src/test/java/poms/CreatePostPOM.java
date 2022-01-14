@@ -1,5 +1,6 @@
 package poms;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,11 +20,12 @@ public class CreatePostPOM {
     @FindBy(id = "description")
     WebElement descriptionInput;
 
-    @FindBy(name = "fileimg")
+    @FindBy(id = "postImgInput")
     WebElement fileInput;
 
     @FindBy(id = "confirmBtn")
     WebElement confirmBtn;
+
 
     public CreatePostPOM(WebDriver driver) {
         this.driver = driver;
@@ -37,11 +39,13 @@ public class CreatePostPOM {
     }
 
     public void enterImg() {
-        this.fileInput.sendKeys("C:\\Pictures\\Earth.jpg");
+        this.fileInput.sendKeys("C:\\Users\\china\\Pictures\\Saved Pictures\\bird.jpg");
     }
 
     public void clickNewPost() {
         this.newPostBtn.click();
+        WebElement modal = this.driver.findElement(By.id("exampleModal"));
+        this.wait.until(ExpectedConditions.attributeContains(modal,"style", "display: block;"));
     }
 
     public void clickConfirm() {
