@@ -6,9 +6,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import poms.LoginPOM;
+import poms.ForgotPasswordPOM;
 
 public class LoginSDF {
     LoginPOM loginPOM;
+    
 
 //    @After
 //    public void tearDown(){
@@ -35,8 +37,8 @@ public class LoginSDF {
 
     @When("A user inputs correct credentials on the login form")
     public void a_user_inputs_correct_credentials_on_the_login_form() {
-        this.loginPOM.enterUsername("joesi");
-        this.loginPOM.enterPassword("password");
+        this.loginPOM.enterUsername("lionelmorgan");
+        this.loginPOM.enterPassword("pass123");
         this.loginPOM.clickLogin();
     }
     @Then("the user will be redirect to the user's account page")
@@ -52,5 +54,9 @@ public class LoginSDF {
     @Then("user will be redirected to the register page")
     public void user_will_be_redirected_to_the_register_page() {
         Assertions.assertEquals("http://localhost:4200/register", this.loginPOM.getCurrentUrl());
+    }
+    @When("A user clicks the forgot password link")
+    public void a_user_clicks_the_forgot_password_link() {
+        this.loginPOM.clickForgotPassword();
     }
 }

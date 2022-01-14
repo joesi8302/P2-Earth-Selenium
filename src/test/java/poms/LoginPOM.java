@@ -28,6 +28,9 @@ public class LoginPOM {
     @FindBy(id = "message")
     WebElement messageElem;
 
+    @FindBy(className = "forgot")
+    WebElement forgotPasswordLink;
+
     public LoginPOM(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
@@ -45,6 +48,10 @@ public class LoginPOM {
 
     public void clickLogin(){
         this.loginBtn.click();
+    }
+    public void clickForgotPassword(){
+        this.forgotPasswordLink.click();
+        this.wait.until(ExpectedConditions.urlToBe("http://localhost:4200/forget-password"));
     }
 
     public void waitForSuccessfulLogin(){
@@ -64,4 +71,5 @@ public class LoginPOM {
         this.registerBtn.click();
         this.wait.until(ExpectedConditions.urlToBe("http://localhost:4200/register"));
     }
+
 }

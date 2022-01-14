@@ -17,7 +17,7 @@ public class CreatePostPOM {
     WebElement newPostBtn;
 
     @FindBy(id = "description")
-    WebElement description;
+    WebElement descriptionInput;
 
     @FindBy(name = "fileimg")
     WebElement fileInput;
@@ -25,25 +25,29 @@ public class CreatePostPOM {
     @FindBy(id = "confirmBtn")
     WebElement confirmBtn;
 
-    public LoginPOM(WebDriver driver) {
+    public CreatePostPOM(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
 
         PageFactory.initElements(this.driver, this);
     }
 
-    public void enterDescription(String username){
+    public void enterDescription(String description) {
         this.descriptionInput.sendKeys(description);
     }
 
-    public void enterFileImg(){
+    public void enterImg() {
         this.fileInput.sendKeys("C:\\Pictures\\Earth.jpg");
     }
 
-    public void clickNewPost(){
+    public void clickNewPost() {
         this.newPostBtn.click();
     }
 
-    public void clickConfirm(){
+    public void clickConfirm() {
         this.confirmBtn.click();
     }
+    public String getCurrentUrl(){
+        return this.driver.getCurrentUrl();
+    }
+}

@@ -14,9 +14,10 @@ public class CreatePostSDF {
     CreatePostPOM createPostPOM;
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         DriverSingleton.quitInstance();
     }
+
     //may have to insert login info
     @Given("A user is on the account page")
     public void a_user_is_on_the_account_page() {
@@ -24,13 +25,17 @@ public class CreatePostSDF {
         this.createPostPOM = new CreatePostPOM(DriverSingleton.getInstance());
         Assertions.assertEquals("http://localhost:4200/account", this.createPostPOM.getCurrentUrl());
     }
-    @When("a user clicks the new post button")
+
+    @When("A user clicks new post button")
     public void a_user_clicks_the_new_post_button() {
         this.createPostPOM.clickNewPost();
     }
-    @Then("a user inputs post description and image")
+
+    @Then("A user inputs post description and image")
     public void a_user_inputs_post_description_and_image() {
         this.createPostPOM.enterDescription("Earth picture");
         this.createPostPOM.enterImg();
         this.createPostPOM.clickConfirm();
     }
+
+}
